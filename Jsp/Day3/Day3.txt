@@ -1,0 +1,94 @@
+화면에 다른 파일을 포함하기
+<%@ include file ="화면에 포함할 파일"%>
+
+//헤더 푸터 왼쪽or오른쪽 메뉴 각각 파일 따로 만들어서 include로 포함
+
+exception 객체
+-예외가 발생하면 특정 페이지로 이동
+
+ex)
+	<%@ page errorPage="이동할 페이지"%>
+-에러페이지 사용 허용
+	<%@ page isErrorPage="true"%>
+	
+pageContext 객체
+forward()
+- 현재 페이지의 요청과 응답에 관한 제어권을 URL로 지정된 주소로 넘김
+- 제어권만 다른 페이지로 넘기고 URL 주소는 유지되는 방식
+											ex)
+											forward.jsp	---------->forward_ok.jsp		url은 forward 냅두고 실행은 forward_ok에서!
+											pageContext.forward("./forward_ok.jsp");
+- response.redirect("..")과는 다름																			//response.redirect("..")은 페이지를 다른데로 이동시킬 때	
+
+
+비동기 통신??
+Ajax(Asynchronous Javascript And XML)			--->자바스크립트 객체 이름@!
+- 웹 페이지 전체를 다시 로딩하지 않고 웹 페이지의 일부분만을 갱신
+- 백그라운드 영역에서 서버와 통신하여 그 결과를 웹페이지에 표시
+- 서버와 주고 받는 데이터는 JSON, XML, HTML, Text등 사용
+
+
+Ajax의 장점
+- 웹페이지 전체를 다시 로딩하지 않아도 웹페이지의 일부분만을 갱신할 수 있음
+- 웹페이지가 모두 로드된 후에도 서버로 요청하거나 받을 수 있음
+- 다양한 동적 페이지의 구현이 가능
+
+Ajax의 단점
+- 페이지 이동이 없기 때문에 히스토리가 남지 않음
+- 반복적인 데이터를 요청하게 되면 느려지거나 작동하지 않을 수 있음
+- 서버에서 클라이언트로 먼저 요청할 수 없음
+
+XMLHttpRequest 객체	?? 
+- Ajax의 핵심적인 구성객체
+- 웹 브라우저가 서버와 데이터를 교환할 때 사용
+- 백그라운드에서 계속 서버와 통신할 수 있는 기능을 제공
+
+	const 변수명 = new XMLHttpRequest();							//xhr=XMLHttpRequest
+번외<jQuery()	단점 속도, 장점 간편	vs banilascripit>
+
+open(전달방식, URL주소, 동기여부): 서버에 보낼 Ajax 요청의 형식을 설정
+전달방식: get, post 방식중 선택
+URL주소: 요청을 처리할 서버의 파일 주소
+동기여부: 요청을 동기식으로 전달할지 비동기식으로 전달할지 선택(true: 비동기)		//동기?? 언제 사용??
+
+send(): 작성된 Ajax를 서버로 전달
+
+readyState: xhr의 상태를 나타내는 프로퍼티	
+0: 객체 생성
+1: open 메소드 호출
+2: send 메소드 호출
+3: loading
+4: 완료					--->통신이 나에게 돌아왔는지 확인할 수 있음
+
+✅ onreadystatechange: readyState의 값이 변할 때마다 호출되는 콜백함수!
+
+
+status: xhr이 접속한 서버페이지의 상태
+2XX: 정상적인 호출
+4XX: 페이지 오류
+
+	
+
+
+
+과제
+select*from tb_member;
+sql member_ 비밀번호 눈으로 보이면 안됨!
+
+
+
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+						

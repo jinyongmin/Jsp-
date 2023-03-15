@@ -1,0 +1,32 @@
+Java Beans(자바 빈즈)
+- JSP의 표준 액션 태그를 통해 접근할 수 있는 자바 클래스
+- 멤버변수와 getter, setter 메소드로 이루어져 있음
+- 패키지를 사용해야 함(디폴트 패키지는 사용하지 못함)
+
+
+스크립틀릿
+<%
+				Member member = new Member();
+				member.setUserid("apple");					//setter
+				String userid = member.getUserid();		//getter
+
+%>
+
+
+액션 태그 사용	-html태그에 사용		-자바코드 작성을 태그로 만듬
+// 객체 생성
+<jsp:useBean class="패키지명.클래스명" id ="참조변수"/>
+<jsp:useBean class="com.koreait.Member" id ="member"/>
+
+/setter
+<jsp:setProperty property="필드명" name="클래스명" value="값"/>
+<jsp:setProperty property="userid" name="member" value="apple"/>
+
+/getter
+<jsp:getProperty property="필드명" name="클래스명"/>
+<jsp:getProperty property="userid" name="member"/>
+
+----------------------------------------------------------------------------------------------------------------
+
+과제.
+Day4 게시판을 자바빈즈를 사용하여 변경

@@ -1,0 +1,13 @@
+1669088209840	Move 8 resources to 'WebContent'
+1669097682429	Move 'write.jsp' to 'include'
+1669097686627	Move 'write.jsp' to 'board'
+1669171449758	Rename resource 'delte.jsp'
+1669171465874	Rename resource 'delete.jsp'
+1669187198606	Rename resource 'edit.ok.jsp'
+1669208430901	Rename type 're_wriye_ok'
+1669255003980	Move 'new.png' to 'board'
+1669257521162	Delete element
+1669268491562	Delete element
+1669275790913	Rename type 'edit_ok'
+1669276288388	Move compilation units
+1669276297502	Delete element

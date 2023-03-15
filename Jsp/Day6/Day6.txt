@@ -1,0 +1,180 @@
+JSP 영역
+
+1.page context	(scope페이지)
+현재 처리되고  있는 하나의 페이지 영역
+pageContext.setAttribute("변수","값");
+
+2.request(request)
+객체가 포워드(이동)되는 영역에서 사용하는 객체. 요청하고 포워드하는 과정(페이지넘어오는과정)의 JSP를 request 하는 영역
+request.setAttribute("변수","값");
+
+3. session(session)		!!!!
+하나의 사용자가 사이트에서 지나가는 모든 페이지 영역에서 개별적으로 사용하는 객체
+session.setAttribute("변수","값");
+
+4.application(application)
+하나의 사이트에 속해 있는 모든 페이지 영역에서 사용되는 공용 객체
+
+application.setAttribute("변수","값");
+
+EL(Expression Language)  표현식			!!간결하고 가독성좋음
+자바빈의 프로퍼티, 값, 액션태그등을 쉽고 간결하게 사용할 수 있도록 하는 기술
+
+${}:
+1. jsp가 실행될 때 즉시 반영하여 값을 출력
+
+예:	<%=1+1%>	 - > ${1+1}
+
+2.파라미터 값을(매개변수 값) 불러올 때 사용
+
+예: request.getParameter(name) ->${param.name}		또는 ${param['name']} 또는${param["name"]}
+
+
+산술연산자
+		덧셈: ${10 + 2}
+			뺄셈: ${10 - 2}
+			곱셈: ${10 * 2}
+			나눗셈: ${10 / 2}			<!-- /  -->
+			나눗셈: ${10 div 2}			<!-- /  div 이클립스가 못받아들임 -->
+			나눗셈: ${10 % 2}			
+			나눗셈: ${10 mod 2}			
+비교연산자
+			크다: ${ 10 > 2 }
+			크다: ${ 10 gt 2 }
+			작다: ${ 10 < 2 }
+			작다: ${ 10 lt 2 }
+			같다: ${ 10 == 2 }
+			같다: ${ 10 eq 2 }
+			다르다: ${ 10 != 2 }
+			다르다: ${ 10 ne 2 }
+			크거나같다: ${ 10 >= 2 }
+			크거나같다: ${ 10 ge 2 }
+			작거나같다: ${ 10 <= 2 }
+			작거나같다: ${ 10 le 2 }
+
+논리 연산자
+${true and true}
+${true or false}
+${not true}
+
+empty 연산자
+${empty 변수}
+1. 	변수의 값이 null이면 true
+2.	문자열, 배열, Map Collection 객체의 크기가 0이면 true
+3.	그 외에는 false
+
+
+JSTL 라이브러리
+자바코드를 HTML 태그 형식으로 간편하게 사용하기 위해 나온 라이브러리
+https://archive.apache.org/dist/jakarta/taglibs/standard/binaries/ 으로 접속
+ jakarta-taglibs-standard-1.1.2.zip 다운로드
+ 
+  JSTL의 종류
+ 1. core tags
+ <%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core"%>
+ 				prefix			uri에따라 쓸수 있는게 달라짐
+변수 생성, URL 관리, 프로그램의 흐름을 제어
+
+c:out
+jsp에서 <%=%> 태그와 유사한 표현식의 결과를 표시 		
+
+c:import
+상대 또는 절대 URL을 검색하여 내용을 var 문자열, varReader의 Reader 또는 페이지에 표시
+
+c:set
+계산 결과를 scope 변수에 설정
+
+c:remove
+특정 범위에서 지정된 범위 변수를 제거할 때 사용
+
+c:if
+조건을 테스트하는데 사용되는 조건부 태그, 표현식이 참인 경우에만 내용을 표시 (else는 없고 참인 경우에만 출력됨)
+
+c:choose, c:when,	c:otherwise
+조건이 true인 경우 본문 내용을 포함하는 간단한 조건부 태그
+
+c:forEach
+기본 반복 태그이며 고정된 횟수 또는 초과되는 중첩된 본문내용을 반복
+
+c:redirect
+브라우저를 새 URL로 리디렉션함
+
+2.	formatting
+메시지, 번호 및 날짜, 통화 형식등을 지원
+ <%@ taglib prefix="fmt" uri ="http://java.sun.com/jsp/jstl/fmt"%>
+
+fmt:parseNumber
+통화, 백분율 또는 숫자의 문자열을 표현, 분석하는데 사용
+
+fmt:formatNumber
+특정 형식 또는 정밀도로 숫자값을 형식화 하는데 사용
+
+fmt:parseDate		(값을 분석)
+시간과 날짜의 문자열 표현을 분석하는데 사용
+
+fmt:formatDate
+제공된 패턴 및 스타일을 사용하여 시간 및 또는 날짜를 형식화
+ 
+fmt:setTimeZone
+시간대 구성 변수내에 시간을 저장
+
+
+3.		function
+문자열 조작 및 문자열 길이를 지원
+ <%@ taglib prefix="fn" uri ="http://java.sun.com/jsp/jstl/functions"%>
+
+fn:contains()
+지정된 하위 문자열을 포함하는 입력 문자열을 테스트하는데 사용
+
+fn:indexOf()
+지정된 하위 문자열이 처음 나타나는 문자열 내에서 인덱스를 반환
+
+fn:split()
+문자열을 하위 문자열 배열로 분할
+
+fn:endsWith()
+입력 문자열이 지정된 접미어로 끝나는지 테스트 
+
+fn:trim()
+문자열의 양쪽 끝 공백을 제거
+
+fn:toLowerCase()
+문자열의 모든 문자열을 소문자로 변환
+
+fn:toUpperCase()
+문자열의 모든 문자를 대문자로 변환
+
+fn:substring()
+주어진 문자열 시작 및 끝 위치에 따라 문자열의 일부를 반환
+
+fn:length()
+문자열 내부의 문자 수 또는 컬렉션의 항목수를 반환
+
+fn:replace()
+모든 문자열을 다른 문자열 시퀀스로 변환
+
+
+Maven Project
+-Apache Maven은 자바용 프로젝트 관리도구
+- 라이브러리를 특정 문서(pom.xml)에 정의해 놓으면 네트워크를 통해 라이브러리를 자동으로 다운받아 관리
+- 라이브러리 관리가 용이
+- war, jar 파일 기반의 배포용으로 자주 사용
+
+다이나믹 웹 프로젝트 -> 마우스 우클릭 -> configure -> convert to maven project
+
+pom.xml 생성됨
+maven repository
+https://mvnrepository.com/
+
+
+파일 업로드
+- jsp에서 cos 라이브러리 사용 (https://mvnrepository.com/artifact/com.jfinal/cos/2020.4
+)
+
+
+과제.
+게시판에서 list.jsp를 jstl과 el을 이용하여 변경
+
+
+
+

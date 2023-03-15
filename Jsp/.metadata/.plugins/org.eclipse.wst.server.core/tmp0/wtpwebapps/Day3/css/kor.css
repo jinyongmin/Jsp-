@@ -1,0 +1,43 @@
+*{box-sizing: border-box;}
+
+    #container{
+        text-align: right;
+        background-color: black;
+        block-size: 55px; 
+        font-size: 18px;        
+        opacity: 0.8;
+    }
+    body{background-color: rgb(243, 243, 242);}
+p{text-align: center;}
+a{
+    color: white;
+    float: right;
+    margin: 12px;
+    text-decoration: none;
+    padding: 5px;
+    
+}
+#search{
+    height: 65px;
+    width: 700px;
+    border-radius: 10px;
+}
+#bt{
+    font-size: large;
+    color: white;
+    height: 65px;
+    width: 90px;
+    border-radius: 7px;
+    background-color: black;
+    opacity: 0.6;
+}
+#df{margin-right: 5px;
+    font-size: large;
+    color: grey;
+    height: 65px;
+    width: 95px;
+    border-radius: 7px;
+}
+
+
+    

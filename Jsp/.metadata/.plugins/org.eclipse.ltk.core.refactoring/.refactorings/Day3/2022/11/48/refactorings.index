@@ -1,0 +1,13 @@
+1668990765101	Rename resource '10_카페소개.html'
+1668992863548	Move '1_cafe.jsp' to 'WebContent'
+1668992958212	Move 2 resources to 'WebContent'
+1668995965912	Rename resource '4_ajaxx.jsp'
+1668997058594	Rename resource '6_회원가입.html'
+1669012060166	Rename resource '6_login_ok.jsp'
+1669012072201	Rename resource '6_login.jsp'
+1669012084619	Rename resource '6_logout.jsp'
+1669017613026	Delete element
+1669019835725	Rename type 'pw'
+1669031739596	Rename type 'servlet'
+1669076020423	Copy elements
+1669076073481	Copy package

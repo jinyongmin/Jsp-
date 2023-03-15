@@ -1,0 +1,64 @@
+과제.
+1.아래 로직페이지를 서블릿으로 작성
+info_ok.jsp
+write_ok.jsp
+
+2.view.jsp 
+조회수 증가: view.jsp 입장시 hit에 +1
+좋아요: 좋아요 버튼을 만들고 클릭시 b_like에 +1 (Ajax)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+조회수 올리기
+
+
+view.jsp 수정누르면 수정
+
+
+
+문제
+1.edit.jsp에 b_title, b_content에 값을 출력				//db연결해서 출력
+2. edit_ok.jsp 를 만들어 글 수정하기	->수정후 해당글에 대한 view.jsp
+
+
+제목 내용 을 edit에서 출력
+
+
+
+과제
+1. 아래 로직페이지를 서블릿으로 작성
+edit_ok.jsp
+delete_ok.jsp
+re_write_ok.jsp
+re_del_ok.jsp
+
+2.list.jsp에 글의 총 갯수를 출력
+3. 3일이내의 글 제목에 new 아이콘 표시
+
+빈즈 getter setter --->게시판
+
+https://movie.naver.com/movie/point/af/list.naver
+https://movie.naver.com/movie/point/af/list.naver?&page=1		//get방식으로감
+
+https://movie.naver.com/movie/point/af/list.naver?&page=2
+
+
+select * from tb_board order by b_idx desc
+
+
+페이지마다 다르게 설정해야함
+sql -->limit 1부터 10개까지 설정
+
+http://localhost:9090/Day4/board/list.jsp?pageNum=1(최근글 기준10개)
+http://localhost:9090/Day4/board/list.jsp?pageNum=2(최근글 기준 그 다음 10개)
+http://localhost:9090/Day4/board/list.jsp?pageNum=3(최근글 기준 그 다음 10개)
+http://localhost:9090/Day4/board/list.jsp?pageNum=4(최근글 기준 그 다음 10개)
+
+
+
+
+
+
+
+
+
+
